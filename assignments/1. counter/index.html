@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Basic Counter App</title>
   </head>
-  <body></body>
+
+  <body>
+
+    <button type="button" id="btn-increment">Increment</button>
+    <button type="button" id="btn-decrement">Decrement</button>
+    <button type="button" id="btn-reset">Reset</button>
+
+    <p id="counter">0</p>
+  </body>
+  <script>
+    let counterValue = 0;
+
+    function setCounter(value) {
+      document.getElementById("counter").innerHTML = value;
+    }
+
+    document.getElementById("btn-increment").onclick = () => {
+      setCounter(++counterValue);
+    };
+
+    document.getElementById("btn-decrement").onclick = () => {
+      setCounter(--counterValue);
+    };
+
+    document.getElementById("btn-reset").onclick = () => {
+      counterValue = 0;
+      setCounter(counterValue);
+    };
+  </script>
+
 </html>

@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Forms</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
   </head>
-  <body></body>
+
+  <body>
+
+    <div id="formContainer">
+      <form onsubmit="validateForm()">
+        <input id="nameInput" type="text" placeholder="Full Name">
+        <span id="nameError">Name can't be empty</span>
+        <input id="emailInput" type="email" placeholder="Email">
+        <span id="emailError">Email can't be empty</span>
+        <input id="passwordInput" type="password" placeholder="Password">
+        <span id="passwordError">Password can't be empty</span>
+        <!-- <input type="submit" value="Submit" > -->
+      </form>
+      <button id="submitButton" onclick="validateForm()">Submit</button>
+    </div>
+  </body>
+
+
 </html>
