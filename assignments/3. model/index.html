@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Modal</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <div id="modal">
+            <div id="modal-content">
+              <img>
+              <p></p>
+            </div>
+        </div>
+
+        <script src="data.js"></script>
+        <script>
+
+            for (item of data) {
+                let imgElement = document.createElement("img");
+                imgElement.setAttribute("src", item.image);
+                imgElement.setAttribute("data-name", item.name);
+                imgElement.setAttribute("data-category", item.category);
+
+                imgElement.addEventListener("click", (e) => {
+                    showModal(e.target);    
+                });
+                document.body.append(imgElement);
+            }
+
+            function showModal(imgElement) {
+                let modal = document.getElementById("modal");
+                let modalContent = document.getElementById("modal-content");
+                let image = modalContent.getElementsByTagName("img")[0];
+                let text = modalContent.getElementsByTagName("p")[0];
+                image.setAttribute("src", imgElement.getAttribute("src"));
+                text.innerHTML = `Name: ${imgElement.dataset.name}<br>Category: ${imgElement.dataset.category}`;
+                modal.style.display = "initial";
+            }
+
+            window.onclick = function (event) {
+                if (event.target.id == "modal") {
+                    event.target.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+
+</html>

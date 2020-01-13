@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="./style.css"></script>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Todo</title>
   </head>
+
   <body>
-    <h1>Hello World!</h1>
+    <div id="container">
+      <h1 id="title">todos</h1>
+      <form id="input-form" autocomplete="off">
+        <input autofocus id="input-box" type="text" placeholder="What needs to be done?">
+      </form>
+      <ul id="todo-list"></ul>
+      <div id="todo-counter-container">
+        <span id="todo-counter"></span>
+        <div id="todo-types">
+          <span id="todo-type-all" class="todo-type">All</span>
+          <span id="todo-type-active" class="todo-type">Active</span>
+          <span id="todo-type-completed" class="todo-type">Completed</span>
+        </div>
+        <div id="clear-completed">
+          <span>Clear completed</span>
+        </div>
+      </div>
+    </div>
     <script src="./main.js"></script>
   </body>
+
 </html>
